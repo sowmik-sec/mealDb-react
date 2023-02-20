@@ -5,13 +5,10 @@ import "./meals.css";
 
 const Meals = () => {
   const [meal, setMeal] = useState("");
-  const [print, setPrint] = useState(false);
   const meals = useLoaderData();
   const handleChange = (e) => {
     setMeal(e.target.value);
   };
-  console.log(meals.meals);
-  //   console.log(meal);
   return (
     <div>
       <h1>Choose your favorite food:</h1>
@@ -21,7 +18,7 @@ const Meals = () => {
         id="meals"
         onInputCapture={handleChange}
       />
-      <button onClick={() => setPrint(true)}>
+      <button>
         <Link to={`/meals/${meal}`}>Show Meal</Link>
       </button>
       <div className="meals">
