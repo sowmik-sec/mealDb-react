@@ -11,14 +11,14 @@ const Meals = () => {
   console.log(meal);
   return (
     <div>
-      <h1>Your favorite food:</h1>
+      <h1>Choose your favorite food:</h1>
       <input
         type="text"
         name="meals"
         id="meals"
         onInputCapture={handleChange}
       />
-      <Link to={meal} />
+      <Link to={`meals/${meal}`} />
     </div>
   );
 };

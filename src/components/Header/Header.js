@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -7,6 +7,7 @@ const Header = () => {
     <div className="header">
       <Link to="/home">Home</Link>
       <Link to="/meals">Meals</Link>
+      <Outlet />
     </div>
   );
 };
