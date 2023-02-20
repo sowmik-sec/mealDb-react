@@ -1,0 +1,11 @@
+.meal {
+  border: 2px solid peru;
+  border-radius: 20px;
+  margin: 25px;
+  padding: 10px;
+}
+
+.meal img {
+  height: 200px;
+  width: 300px;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Meal from "../Meal/Meal";
+import "./meals.css";
 
 const Meals = () => {
   const [meal, setMeal] = useState("");
@@ -23,9 +24,11 @@ const Meals = () => {
       <button onClick={() => setPrint(true)}>
         <Link to={`/meals/${meal}`}>Show Meal</Link>
       </button>
-      {meals.meals.map((meal) => (
-        <Meal meal={meal} key={meal.idMeal} />
-      ))}
+      <div className="meals">
+        {meals.meals.map((meal) => (
+          <Meal meal={meal} key={meal.idMeal} />
+        ))}
+      </div>
     </div>
   );
 };
