@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import Meal from "../Meal/Meal";
 
 const Meals = () => {
   const [meal, setMeal] = useState("");
+  const [print, setPrint] = useState(false);
   const meals = useLoaderData();
   const handleChange = (e) => {
     setMeal(e.target.value);
   };
-  console.log(meals);
-  console.log(meal);
+  console.log(meals.meals);
+  //   console.log(meal);
   return (
     <div>
       <h1>Choose your favorite food:</h1>
@@ -18,7 +20,12 @@ const Meals = () => {
         id="meals"
         onInputCapture={handleChange}
       />
-      <Link to={`meals/${meal}`} />
+      <button onClick={() => setPrint(true)}>
+        <Link to={`/meals/${meal}`}>Show Meal</Link>
+      </button>
+      {meals.meals.map((meal) => (
+        <Meal meal={meal} key={meal.idMeal} />
+      ))}
     </div>
   );
 };
