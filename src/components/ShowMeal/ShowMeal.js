@@ -4,7 +4,6 @@ import Meal from "../Meal/Meal";
 
 const ShowMeal = () => {
   const meal = useLoaderData();
-  console.log(meal);
   return (
     <div>
       <h1>Here goes all the selected meals</h1>
