@@ -4,6 +4,7 @@ import Home from "../components/Home/Home";
 import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 import ShowMeal from "../components/ShowMeal/ShowMeal";
+import ShowOneMeal from "../components/ShowOneMeal/ShowOneMeal";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,15 @@ export const router = createBrowserRouter([
         loader: async ({ params }) => {
           return fetch(
             `https://www.themealdb.com/api/json/v1/1/search.php?s=${params.meal}`
+          );
+        },
+      },
+      {
+        path: "meals/meal/:idMeal",
+        element: <ShowOneMeal />,
+        loader: async ({ params }) => {
+          return fetch(
+            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.idMeal}`
           );
         },
       },
